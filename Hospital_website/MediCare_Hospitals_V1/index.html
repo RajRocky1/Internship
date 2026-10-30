@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MediCare Hospital | Multi-Specialty Care and Doctor Appointments (Demo)</title>
+    <meta name="description"
+        content="MediCare Hospital is a demonstration website for a multi-specialty hospital: explore departments, doctors, outpatient care, diagnostics and preventive health checkups.">
+    <!-- Google ignores the keywords tag; it is included because the assignment requires it. -->
+    <meta name="keywords"
+        content="multi-specialty hospital, private hospital, multi-specialty clinic, patient-centered care, book a doctor appointment, book doctor appointment online, schedule doctor visit, specialist appointment booking, cardiology, orthopedics, neurology, pediatrics, general medicine, heart specialist, bone and joint doctor, neurologist, pediatric care, general physician, emergency care, emergency department, outpatient consultation, medical diagnostics, diagnostic services, laboratory testing, blood test, x-ray and imaging, preventive health checkup, preventive health screening, health checkup package, health screening package, routine health checkup, family healthcare, second opinion consultation, sick visit, medical advice, chest pain evaluation, joint pain treatment, headache specialist, child health checkup, fever and infection care, compassionate care, clear medical communication, follow-up care, coordinated care">
+    <!-- Revisit the robots directive before launch. -->
+    <meta name="robots" content="index, follow">
+    <!-- theme-color must match --brand-blue in style.css -->
+    <meta name="theme-color" content="#2400FF">
+    <meta property="og:title" content="MediCare Hospital: Multi-Specialty Care (Demo)">
+    <meta property="og:description"
+        content="Demo hospital website with departments, sample doctors, services and a demo appointment form.">
+    <meta property="og:type" content="website">
+    <!-- REQUIRES REAL PRODUCTION DOMAIN BEFORE LAUNCH: og:url, og:image, rel="canonical" -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MediCare Hospital: Multi-Specialty Care (Demo)">
+    <meta name="twitter:description"
+        content="Demo hospital website with departments, sample doctors, services and a demo appointment form.">
+    <!-- Favicon: standalone data-URI copy of the logo mark. Replace with a full production favicon set (add the asset files) before launch. -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232400FF'/%3E%3Cpath d='M17 6h6v6h8v6h-8v6h-6v-6H9v-6h8z' fill='%23FFFFFF'/%3E%3Cpath d='M6 31h8l3-5 4 8 3-3h10' fill='none' stroke='%2326C6DA' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body id="top" tabindex="-1">
+    <!-- Logo and icon symbols (brand palette only) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="logo-mark" viewBox="0 0 40 40">
+            <rect width="40" height="40" rx="10" fill="#2400FF" />
+            <path d="M17 6h6v6h8v6h-8v6h-6v-6H9v-6h8z" fill="#FFFFFF" />
+            <path d="M6 31h8l3-5 4 8 3-3h10" fill="none" stroke="#26C6DA" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </symbol>
+        <symbol id="person" viewBox="0 0 80 80">
+            <circle cx="40" cy="30" r="14" />
+            <path d="M12 78c2-19 14-29 28-29s26 10 28 29z" />
+        </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="MediCare Hospital, back to top">
+                <svg class="brand-mark" width="40" height="40" aria-hidden="true">
+                    <use href="#logo-mark" />
+                </svg>
+                <span class="brand-text"><strong>MediCare</strong> Hospital</span>
+            </a>
+            <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false"
+                aria-controls="primary-navigation" aria-label="Open main menu">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+            <nav id="primary-navigation" class="primary-nav" aria-label="Main">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a class="btn btn-primary" href="#appointment">Book appointment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-tags">
+                        <p class="hero-note">Multi-Specialty Care</p>
+
+                    </div>
+                    <h1 id="hero-title">Thoughtful Care For Every Stage Of Your Health</h1>
+                    <p class="lead">From a routine check to specialist treatment, MediCare Hospital brings departments,
+                        diagnostics and follow-up care together so you always know what comes next.</p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#appointment">Book appointment</a>
+                        <a class="btn btn-outline" href="#services">Explore our services</a>
+                    </div>
+                    <ul class="highlights" aria-label="Highlights">
+                        <li><strong>5</strong> clinical departments</li>
+                        <li><strong>Outpatient</strong> and diagnostic care</li>
+                        <li><strong>Preventive</strong> health checkups</li>
+                    </ul>
+                </div>
+                <div class="hero-visual" aria-hidden="false">
+                    <svg viewBox="0 0 480 400" role="img"
+                        aria-label="Illustration of a medical cross with a heartbeat line in the hospital's brand colors">
+                        <rect width="480" height="400" rx="28" fill="#2400FF" />
+                        <circle cx="400" cy="70" r="120" fill="#26C6DA" fill-opacity=".18" />
+                        <circle cx="60" cy="360" r="140" fill="#FFFFFF" fill-opacity=".07" />
+                        <path d="M210 40h60v70h70v60h-70v70h-60v-70h-70v-60h70z" fill="#FFFFFF" />
+                        <path class="ecg" pathLength="1" d="M20 300h120l30-60 50 130 40-90 28 20h192" fill="none"
+                            stroke="#26C6DA" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section section-tint" aria-labelledby="about-title">
+            <div class="container split">
+                <div class="reveal about-image" data-reveal="left">
+                    <div class="media media-about">
+                        <svg viewBox="0 0 400 320" role="img"
+                            aria-label="Illustration of connected care teams around a medical cross">
+                            <rect width="400" height="320" fill="#26C6DA" />
+                            <circle cx="200" cy="160" r="110" fill="#FFFFFF" fill-opacity=".35" />
+                            <circle cx="200" cy="160" r="70" fill="#FFFFFF" />
+                            <path d="M188 120h24v28h28v24h-28v28h-24v-28h-28v-24h28z" fill="#2400FF" />
+                            <circle cx="70" cy="70" r="22" fill="#2400FF" />
+                            <circle cx="340" cy="90" r="16" fill="#FFFFFF" />
+                            <circle cx="320" cy="260" r="24" fill="#2400FF" />
+                            <circle cx="80" cy="250" r="14" fill="#FFFFFF" />
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h2 id="about-title" class="reveal " data-reveal="up">Care built around the patient</h2>
+                    <p class="reveal" data-reveal="up" style="--reveal-delay:100ms">Our mission is to make hospital care
+                        clear and coordinated. Each department works from one shared plan, so you spend less time
+                        repeating yourself and more time getting better.</p>
+                    <ul class="benefits">
+                        <li class="reveal " data-reveal="up" style="--reveal-delay:150ms">
+                            <h3>Coordinated specialists</h3>
+                            <p>Departments share notes so your care stays consistent.</p>
+                        </li>
+                        <li class="reveal" data-reveal="up" style="--reveal-delay:250ms">
+                            <h3>Clear communication</h3>
+                            <p>Plain explanations of tests, options and next steps.</p>
+                        </li>
+                        <li class="reveal" data-reveal="up" style="--reveal-delay:350ms">
+                            <h3>Care beyond the visit</h3>
+                            <p>Follow-up and preventive checkups to keep you well.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="departments" class="section" aria-labelledby="dept-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="dept-title" class="reveal" data-reveal="up">Medical departments</h2>
+                    <p class="reveal" data-reveal="up" style="--reveal-delay:100ms">Five departments covering the most
+                        common reasons people visit a hospital.</p>
+                </div>
+                <div class="grid grid-5">
+                    <article class="card reveal" data-reveal="right">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />
+                        </svg>
+                        <h3><button class="dept-link" type="button" data-department="cardiology">Cardiology</button>
+                        </h3>
+                        <p>Heart and circulation care, from checkups to ongoing management.</p>
+                        <span class="dept-cta" aria-hidden="true">Book this department</span>
+
+                    </article>
+                    <article class="card reveal" data-reveal="right" style="--reveal-delay:150ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 17 17 7" />
+                            <circle cx="6" cy="18" r="2.5" />
+                            <circle cx="18" cy="6" r="2.5" />
+                        </svg>
+                        <h3><button class="dept-link" type="button" data-department="orthopedics">Orthopedics</button>
+                        </h3>
+                        <p>Bones, joints and muscles, including injury assessment and rehabilitation.</p>
+                        <span class="dept-cta" aria-hidden="true">Book this department</span>
+                    </article>
+                    <article class="card reveal" data-reveal="right" style="--reveal-delay:300ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="6" cy="8" r="2.5" />
+                            <circle cx="18" cy="8" r="2.5" />
+                            <circle cx="12" cy="18" r="2.5" />
+                            <path d="m8 9.5 3 6.5M16 9.5l-3 6.5M8.5 8h7" />
+                        </svg>
+                        <h3><button class="dept-link" type="button" data-department="neurology">Neurology</button></h3>
+                        <p>Evaluation and care for the brain, nerves and spine.</p>
+                        <span class="dept-cta" aria-hidden="true">Book this department</span>
+                    </article>
+                    <article class="card reveal" data-reveal="right" style="--reveal-delay:450ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M9 10h.01M15 10h.01M8.5 14.5c1.5 2 5.5 2 7 0" />
+                        </svg>
+                        <h3><button class="dept-link" type="button" data-department="pediatrics">Pediatrics</button>
+                        </h3>
+                        <p>Child-friendly care for infants, children and teenagers.</p>
+                        <span class="dept-cta" aria-hidden="true">Book this department</span>
+                    </article>
+                    <article class="card reveal" data-reveal="right" style="--reveal-delay:600ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7.5v9M7.5 12h9" />
+                        </svg>
+                        <h3><button class="dept-link" type="button" data-department="general">General Medicine</button>
+                        </h3>
+                        <p>A first point of contact for everyday health concerns and referrals.</p>
+                        <span class="dept-cta" aria-hidden="true">Book this department</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="doctors" class="section section-tint" aria-labelledby="doc-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="doc-title" class="reveal" data-reveal="up">Meet our doctors</h2>
+                    <p class="notice reveal" data-reveal="up" style="--reveal-delay:100ms"><strong>Demo
+                            content:</strong> these doctors are fictional and are not real medical professionals. No
+                        credentials are implied.</p>
+                </div>
+                <div class="grid grid-3 doctor-grid">
+                    <article class="card doctor reveal" data-reveal="left">
+                        <div class="avatar avatar-blue"><svg viewBox="0 0 80 80" role="img"
+                                aria-label="Placeholder portrait for a fictional doctor">
+                                <use href="#person" />
+                            </svg></div>
+                        <h3>Dr. Meera Anand</h3>
+                        <p class="specialty">Cardiology (fictional)</p>
+                        <p class="focus">Heart health and routine checkups</p>
+                        <button class="btn btn-outline book-doctor" type="button" data-department="cardiology"
+                            data-doctor="Dr. Meera Anand">Book with this doctor</button>
+                    </article>
+                    <article class="card doctor reveal" data-reveal="left" style="--reveal-delay:150ms">
+                        <div class="avatar avatar-teal"><svg viewBox="0 0 80 80" role="img"
+                                aria-label="Placeholder portrait for a fictional doctor">
+                                <use href="#person" />
+                            </svg></div>
+                        <h3>Dr. Rohan Kapoor</h3>
+                        <p class="specialty">Neurology (fictional)</p>
+                        <p class="focus">Care for headaches, nerves and the spine</p>
+                        <button class="btn btn-outline book-doctor" type="button" data-department="neurology"
+                            data-doctor="Dr. Rohan Kapoor">Book with this doctor</button>
+                    </article>
+                    <article class="card doctor reveal" data-reveal="left" style="--reveal-delay:300ms">
+                        <div class="avatar avatar-white"><svg viewBox="0 0 80 80" role="img"
+                                aria-label="Placeholder portrait for a fictional doctor">
+                                <use href="#person" />
+                            </svg></div>
+                        <h3>Dr. Elena Park</h3>
+                        <p class="specialty">Pediatrics (fictional)</p>
+                        <p class="focus">Everyday care for children and teenagers</p>
+                        <button class="btn btn-outline book-doctor" type="button" data-department="pediatrics"
+                            data-doctor="Dr. Elena Park">Book with this doctor</button>
+                    </article>
+                    <article class="card doctor reveal" data-reveal="left" style="--reveal-delay:450ms">
+                        <div class="avatar avatar-blue"><svg viewBox="0 0 80 80" role="img"
+                                aria-label="Placeholder portrait for a fictional doctor">
+                                <use href="#person" />
+                            </svg></div>
+                        <h3>Dr. Arjun Mehta</h3>
+                        <p class="specialty">Orthopedics (fictional)</p>
+                        <p class="focus">Bone, joint and muscle care</p>
+                        <button class="btn btn-outline book-doctor" type="button" data-department="orthopedics"
+                            data-doctor="Dr. Arjun Mehta">Book with this doctor</button>
+                    </article>
+                    <article class="card doctor reveal" data-reveal="left" style="--reveal-delay:600ms">
+                        <div class="avatar avatar-teal"><svg viewBox="0 0 80 80" role="img"
+                                aria-label="Placeholder portrait for a fictional doctor">
+                                <use href="#person" />
+                            </svg></div>
+                        <h3>Dr. Sara Thomas</h3>
+                        <p class="specialty">General Medicine (fictional)</p>
+                        <p class="focus">First visits and everyday health concerns</p>
+                        <button class="btn btn-outline book-doctor" type="button" data-department="general"
+                            data-doctor="Dr. Sara Thomas">Book with this doctor</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section" aria-labelledby="serv-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="serv-title" class="reveal" data-reveal="up">Hospital services</h2>
+                    <p class="reveal" data-reveal="up" style="--reveal-delay:100ms">Services you can expect from a
+                        multi-specialty hospital.</p>
+                </div>
+                <div class="grid grid-3 service-grid">
+                    <article class="service reveal" data-reveal="left">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4 3 20h18z" />
+                            <path d="M12 10v4M12 17h.01" />
+                        </svg>
+                        <h3>Emergency care</h3>
+                        <p>Emergency department for urgent conditions.</p>
+                    </article>
+                    <article class="service reveal" data-reveal="left" style="--reveal-delay:150ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="11" cy="11" r="6" />
+                            <path d="m20 20-4.2-4.2" />
+                        </svg>
+                        <h3>Diagnostics</h3>
+                        <p>Imaging and diagnostic tests ordered by your doctor.</p>
+                    </article>
+                    <article class="service reveal" data-reveal="left" style="--reveal-delay:300ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3M8 14h8" />
+                        </svg>
+                        <h3>Laboratory services</h3>
+                        <p>Sample collection and laboratory testing.</p>
+                    </article>
+                    <article class="service reveal" data-reveal="left" style="--reveal-delay:450ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="6" y="5" width="12" height="16" rx="2" />
+                            <path d="M9 5V4h6v1M9 11h6M9 15h4" />
+                        </svg>
+                        <h3>Outpatient care</h3>
+                        <p>Consultations and treatment without an overnight stay.</p>
+                        <a class="service-link" href="#appointment">Book a visit</a>
+                    </article>
+                    <article class="service reveal" data-reveal="left" style="--reveal-delay:600ms">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        <h3>Preventive health checkups</h3>
+                        <p>Routine screening packages to review your overall health.</p>
+                        <a class="service-link" href="#appointment">Book a visit</a>
+                    </article>
+                </div>
+                <p class="emergency reveal" data-reveal="up"><strong>In an emergency, contact your local emergency
+                        services immediately.</strong> Do not use this website or its form for urgent medical needs.</p>
+            </div>
+        </section>
+
+        <section id="appointment" class="section section-tint" aria-labelledby="appt-title">
+            <div class="container split split-form">
+                <div>
+                    <h2 id="appt-title" class="reveal" data-reveal="left" style="--reveal-delay:50ms">Book an
+                        appointment</h2>
+                    <p class="reveal" data-reveal="left" style="--reveal-delay:150ms">Choose a department, doctor and a
+                        time that suits you.</p>
+                    <p class="notice reveal" data-reveal="left" style="--reveal-delay:250ms"><strong>Demonstration
+                            form.</strong> It does not transmit or store any information and does not book appointments.
+                        Please do not enter real medical information.</p>
+                </div>
+                <form id="appointment-form" class="form reveal" data-reveal="right" novalidate>
+                    <p class="req-note">Fields marked with <span class="req" aria-hidden="true">*</span> are required.
+                    </p>
+                    <div class="form-group"><label for="fullname">Full name <span class="req"
+                                aria-hidden="true">*</span></label>
+                        <input id="fullname" name="fullname" type="text" autocomplete="name" required
+                            aria-describedby="error-fullname">
+                        <p class="error" id="error-fullname" aria-live="polite"></p>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="email">Email address <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+                                autocapitalize="off" spellcheck="false" required aria-describedby="error-email">
+                            <p class="error" id="error-email" aria-live="polite"></p>
+                        </div>
+                        <div class="form-group"><label for="phone">Phone number <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
+                                aria-describedby="error-phone">
+                            <p class="error" id="error-phone" aria-live="polite"></p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="department">Department <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <select id="department" name="department" required aria-describedby="error-department">
+                                <option value="">Select a department</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="general">General Medicine</option>
+                            </select>
+                            <p class="error" id="error-department" aria-live="polite"></p>
+                        </div>
+                        <div class="form-group"><label for="doctor">Doctor <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <select id="doctor" name="doctor" required aria-describedby="error-doctor">
+                                <option value="">Select a department first</option>
+                            </select>
+                            <p class="error" id="error-doctor" aria-live="polite"></p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="date">Appointment date <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <input id="date" name="date" type="date" required aria-describedby="error-date">
+                            <p class="error" id="error-date" aria-live="polite"></p>
+                        </div>
+                        <div class="form-group"><label for="time">Preferred time <span class="req"
+                                    aria-hidden="true">*</span></label>
+                            <select id="time" name="time" required aria-describedby="error-time">
+                                <option value="">Select a time</option>
+                                <option>Morning (9:00-12:00)</option>
+                                <option>Afternoon (12:00-16:00)</option>
+                                <option>Evening (16:00-19:00)</option>
+                            </select>
+                            <p class="error" id="error-time" aria-live="polite"></p>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="message">Message <span
+                                class="optional">(optional)</span></label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <div class="form-group check"><label class="check-label"><input id="consent" name="consent"
+                                type="checkbox" required aria-describedby="error-consent"> I understand this is a
+                            demonstration and nothing will be booked or stored. <span class="req"
+                                aria-hidden="true">*</span></label>
+                        <p class="error" id="error-consent" aria-live="polite"></p>
+                    </div>
+                    <p class="request-summary" id="request-summary" aria-live="polite"></p>
+                    <button class="btn btn-primary btn-block" type="submit">Submit demo request</button>
+                    <p class="next-note">In a real booking, a hospital team member would confirm your slot by phone.</p>
+                    <div class="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section" aria-labelledby="test-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="test-title" class="reveal" data-reveal="up">What patients might say</h2>
+                    <p class="notice reveal" data-reveal="up" style="--reveal-delay:100ms"><strong>Fictional demo
+                            testimonials.</strong> These are sample quotes, not real patient reviews.</p>
+                </div>
+                <div class="grid grid-3">
+                    <figure class="quote reveal" data-reveal="up">
+                        <blockquote>The team explained each step before it happened, which made the visit far less
+                            stressful.</blockquote>
+                        <figcaption>Sample testimonial A</figcaption>
+                    </figure>
+                    <figure class="quote reveal" data-reveal="up" style="--reveal-delay:120ms">
+                        <blockquote>Booking and follow-up were simple, and the staff were patient with my questions.
+                        </blockquote>
+                        <figcaption>Sample testimonial B</figcaption>
+                    </figure>
+                    <figure class="quote reveal" data-reveal="up" style="--reveal-delay:240ms">
+                        <blockquote>Our child felt at ease, and we left knowing exactly what to do next.</blockquote>
+                        <figcaption>Sample testimonial C</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-ink" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="reveal" data-reveal="up">Contact us</h2>
+                <p class="reveal" data-reveal="up" style="--reveal-delay:100ms">These are placeholders. Replace them
+                    with verified hospital details before launch.</p>
+                <dl class="contact-list reveal" data-reveal="up" style="--reveal-delay:150ms">
+                    <div>
+                        <dt>Address</dt>
+                        <dd>Vivekananda Circle</dd>
+                    </div>
+                    <div>
+                        <dt>Phone</dt>
+                        <dd>9353652369</dd>
+                    </div>
+                    <div>
+                        <dt>Email</dt>
+                        <dd>medicarehealth@gmail.com</dd>
+                    </div>
+                    <div>
+                        <dt>Opening hours</dt>
+                        <dd>24/7</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="brand brand-light" href="#top" aria-label="MediCare Hospital, back to top">
+                    <svg width="40" height="40" aria-hidden="true">
+                        <use href="#logo-mark" />
+                    </svg>
+                    <span class="brand-text"><strong>MediCare</strong> Hospital</span>
+                </a>
+                <p>A fictional hospital website created for demonstration purposes.</p>
+            </div>
+            <nav aria-label="Footer">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#departments">Departments</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#appointment">Book appointment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <p>Vivekananda Circle</p>
+                <p>9353652369</p>
+                <p>medicarehealth@gmail.com</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> MediCare Hospital (demo). All rights reserved.</p>
+            <a class="back-link" href="#top">Back to top</a>
+        </div>
+    </footer>
+
+    <a class="back-to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" width="22" height="22"
+            aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg></a>
+</body>
+
+</html>
